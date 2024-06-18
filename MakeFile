@@ -1,0 +1,20 @@
+create_venv:
+	python3.11 -m venv venv_python_finance && \
+	source venv_python_finance/bin/activate
+
+create_requirements:
+	source venv_python_finance/bin/activate && \
+	pip install --upgrade pip && \
+	rm -rf requirements.txt && \
+	echo jupyterlab==4.0.9 >> requirements.txt && \
+	echo pandas==2.1.3 >> requirements.txt && \
+	echo matplotlib==3.8.2 >> requirements.txt && \
+	echo seaborn==0.13.0 >> requirements.txt && \
+	echo numpy >> requirements.txt && \
+	echo scipy >> requirements.txt && \
+	echo yfinance >> requirements.txt && \
+	pip install -r requirements.txt
+
+start_jupyter:
+	source venv_python_finance/bin/activate && \
+	jupyter lab --port=9999
