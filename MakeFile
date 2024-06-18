@@ -13,6 +13,7 @@ create_requirements:
 	echo numpy >> requirements.txt && \
 	echo scipy >> requirements.txt && \
 	echo yfinance >> requirements.txt && \
+	echo scikit-learn >> requirements.txt && \
 	pip install -r requirements.txt
 
 start_jupyter:
